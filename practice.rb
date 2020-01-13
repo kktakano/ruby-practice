@@ -134,30 +134,48 @@
 
 
 ###
-n = gets.to_i
-order = []
-i1 = 0
-i2 = 0
-n.times do |i|
-  input_order = gets.chomp
-  order << input_order
-end
+# n = gets.to_i
+# order = []
+# i1 = 0
+# i2 = 0
+# n.times do |i|
+#   input_order = gets.chomp
+#   order << input_order
+# end
 
-order.each do |x|
-  if x.match(/SET/)
-    x = x.split(" ")
-    if x[1].to_i == 1
-      i1 = x[2].to_i
-    else 
-      i2 = x[2].to_i
-    end
-  elsif x.match(/ADD/)
-    x = x.split(" ")
-    i2 = i1 + x[1].to_i
-  else
-    x = x.split(" ")
-    i2 = i1 - x[1].to_i
-  end
-end
+# order.each do |x|
+#   if x.match(/SET/)
+#     x = x.split(" ")
+#     if x[1].to_i == 1
+#       i1 = x[2].to_i
+#     else 
+#       i2 = x[2].to_i
+#     end
+#   elsif x.match(/ADD/)
+#     x = x.split(" ")
+#     i2 = i1 + x[1].to_i
+#   else
+#     x = x.split(" ")
+#     i2 = i1 - x[1].to_i
+#   end
+# end
 
-puts "#{i1} #{i2}"
+# puts "#{i1} #{i2}"
+
+
+
+
+####
+# 今日は大雪、子どもたちはかまくらをつくろうとはしゃいでいます。どれだけの体積の雪が必要かを計算してあげましょう。
+# かまくらは 1 辺が r1 (m) の立方体から r2 (m) の立方体分をくり抜く形でつくります (以下の図参照)。このときかまくらの体積 (m^3)は
+# r1^3 - r2^3
+# で求められます。
+# 例)
+# r1 = 5, r2 = 2
+# → かまくらの体積 = 5^3 - 2^3 = 125 - 8 = 117 m^3
+
+input_line = gets.split()
+r1 = input_line[0].to_i
+r2 = input_line[1].to_i
+total = r1 ** 3 - r2 ** 3
+puts total
