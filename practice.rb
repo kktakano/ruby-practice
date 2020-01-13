@@ -54,12 +54,44 @@
 
 
 ####
-# あなたは本を読んでいたところ、残り何ページか知りたくなりました。
-# 本の総ページ数 m と読み終えたページ n が入力されるので、残りのページ数を表示してください。
+# # あなたは本を読んでいたところ、残り何ページか知りたくなりました。
+# # 本の総ページ数 m と読み終えたページ n が入力されるので、残りのページ数を表示してください。
 
-input_line = gets.split(" ")
-m = input_line[0].to_i
-n = input_line[1].to_i
+# input_line = gets.split(" ")
+# m = input_line[0].to_i
+# n = input_line[1].to_i
 
-result = m - n
-puts result
+# result = m - n
+# puts result
+
+
+
+
+###
+# 偶数と奇数、どちらが好きですが？
+# あなたは会社を代表して 2 つの数字を選ばなくてはなりませんが、偶数好きと奇数好きの溝が深まらないよう、それぞれを 1 つずつ選ばなくてはなりません。
+# 候補としてあげられた 2 つの数字が入力されるので、偶数と奇数が両方入っているか確認してください。
+
+# input_line = gets.split(" ")
+# m = input_line[0].to_i
+# n = input_line[1].to_i
+
+# if m.odd? && n.even? || n.odd? && m.even?
+#   puts "YES"
+# else
+#   puts "NO"
+# end
+
+####
+# # ある正の整数nが入力されます。
+# # 正の整数1から9に整数nをそれぞれを掛けた数を半角スペース区切りで出力して下さい。
+# # 例えばn=2の場合
+# # 2 4 6 8 10 12 14 16 18
+# # となります
+
+# input_line = gets.to_i
+# r = []
+# (1..9).each do |i|
+#   r << i * input_line
+# end
+# puts r.join(" ")
