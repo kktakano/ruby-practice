@@ -123,11 +123,41 @@
 # このような数列を出力するプログラムを作りましょう。
 # 初項 m が与えられ、公差 n が与えられるので 10番目までの数字をスペース区切りで出力するプログラムを作成してください。
 
-input_line = gets.split(" ")
-n = input_line[1].to_i
-m = input_line[0].to_i - n
-r = []
-10.times do |i|
-r << ( m += n)
+# input_line = gets.split(" ")
+# n = input_line[1].to_i
+# m = input_line[0].to_i - n
+# r = []
+# 10.times do |i|
+# r << ( m += n)
+# end
+# puts r.join(" ")
+
+
+###
+n = gets.to_i
+order = []
+i1 = 0
+i2 = 0
+n.times do |i|
+  input_order = gets.chomp
+  order << input_order
 end
-puts r.join(" ")
+
+order.each do |x|
+  if x.match(/SET/)
+    x = x.split(" ")
+    if x[1].to_i == 1
+      i1 = x[2].to_i
+    else 
+      i2 = x[2].to_i
+    end
+  elsif x.match(/ADD/)
+    x = x.split(" ")
+    i2 = i1 + x[1].to_i
+  else
+    x = x.split(" ")
+    i2 = i1 - x[1].to_i
+  end
+end
+
+puts "#{i1} #{i2}"
