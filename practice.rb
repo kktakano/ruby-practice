@@ -308,29 +308,55 @@
 
 ###
 # 簡易ポーカー
-input = gets.to_i
-nums = []
-input.times do
-  n = gets.split()
-  nums << n
-end
+# input = gets.to_i
+# nums = []
+# input.times do
+#   n = gets.split()
+#   nums << n
+# end
 
-nums.each do |i|
-  i.each do |e|
-    e = e.to_s.split("")
-    ee = e.group_by(&:itself).map{|key,value|[key,value.count]}.to_h
-    num = ee.values.count(2)
-    res = ee.values.max
-    if num == 2
-      puts "Two Pair"
-    elsif num == 1
-      puts "One Pair"
-    elsif res == 4
-      puts "Four Card"
-    elsif res == 3
-      puts "Three Card"
-    else
-      puts "No Pair"
-    end
+# nums.each do |i|
+#   i.each do |e|
+#     e = e.to_s.split("")
+#     ee = e.group_by(&:itself).map{|key,value|[key,value.count]}.to_h
+#     num = ee.values.count(2)
+#     res = ee.values.max
+#     if num == 2
+#       puts "Two Pair"
+#     elsif num == 1
+#       puts "One Pair"
+#     elsif res == 4
+#       puts "Four Card"
+#     elsif res == 3
+#       puts "Three Card"
+#     else
+#       puts "No Pair"
+#     end
+#   end
+# end
+
+
+
+###
+input = gets.split()
+a = input[0]
+op = input[1]
+b = input[2]
+c = input[4]
+if op == "+"
+  if c == "x"
+    puts a.to_i + b.to_i
+  elsif b == "x"
+    puts c.to_i - a.to_i
+  else
+    puts c.to_i - b.to_i
+  end
+else
+  if c == "x"
+    puts a.to_i - b.to_i
+  elsif b == "x"
+    puts a.to_i - c.to_i
+  else
+    puts b.to_i + c.to_i
   end
 end
