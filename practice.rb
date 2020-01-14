@@ -239,24 +239,67 @@
 
 
 ###
-q = gets.to_i
-n = []
-q.times do
-  n << gets.to_i
+# q = gets.to_i
+# n = []
+# q.times do
+#   n << gets.to_i
+# end
+# n.each do |i|
+#   sum = 0
+#   i.times do |e|
+#     if i % (e + 1) == 0
+#       sum += (e + 1)
+#     end
+#   end
+#   sum = sum - i
+#   if i == sum
+#     puts "perfect"
+#   elsif i - sum == 1
+#     puts "nearly"
+#   else
+#     puts "neither"
+#   end
+# end
+
+
+###
+
+# n = gets.to_i
+# g = gets.chomp
+# s_n = []
+# result = []
+# n.times do
+#   input_line = gets.chomp
+#   s_n << input_line
+# end
+
+# s_n.each do |i|
+#   if i.match(/#{g}/)
+#     result << i
+#   end
+# end
+
+# if result.empty?
+#   puts "None"
+# else
+#   puts result
+# end
+
+
+###
+input_line = gets.split()
+n = input_line[0].to_i
+m = input_line[1].to_i
+k_n = []
+tow = []
+n.times do
+  input = gets.to_i
+  k_n << input
 end
-n.each do |i|
-  sum = 0
-  i.times do |e|
-    if i % (e + 1) == 0
-      sum += (e + 1)
-    end
-  end
-  sum = sum - i
-  if i == sum
-    puts "perfect"
-  elsif i - sum == 1
-    puts "nearly"
-  else
-    puts "neither"
-  end
+while m > 0 do
+  tow << m % 2
+  m = m.div(2)
+end
+k_n.each do |i|
+  puts tow[i - 1]
 end
