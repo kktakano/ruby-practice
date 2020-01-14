@@ -338,25 +338,41 @@
 
 
 ###
-input = gets.split()
-a = input[0]
-op = input[1]
-b = input[2]
-c = input[4]
-if op == "+"
-  if c == "x"
-    puts a.to_i + b.to_i
-  elsif b == "x"
-    puts c.to_i - a.to_i
-  else
-    puts c.to_i - b.to_i
-  end
-else
-  if c == "x"
-    puts a.to_i - b.to_i
-  elsif b == "x"
-    puts a.to_i - c.to_i
-  else
-    puts b.to_i + c.to_i
-  end
+# input = gets.split()
+# a = input[0]
+# op = input[1]
+# b = input[2]
+# c = input[4]
+# if op == "+"
+#   if c == "x"
+#     puts a.to_i + b.to_i
+#   elsif b == "x"
+#     puts c.to_i - a.to_i
+#   else
+#     puts c.to_i - b.to_i
+#   end
+# else
+#   if c == "x"
+#     puts a.to_i - b.to_i
+#   elsif b == "x"
+#     puts a.to_i - c.to_i
+#   else
+#     puts b.to_i + c.to_i
+#   end
+# end
+
+
+
+###
+n = gets.to_i
+f_n = []
+n.times do
+  input_line = gets.to_i
+  f_n << input_line
 end
+result = (1 - f_n[0]).abs
+f_n.each_with_index do |i, index|
+  result += (i.to_i - f_n[index+1].to_i).abs
+  break if index == n-2
+end
+puts result
