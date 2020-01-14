@@ -287,19 +287,50 @@
 
 
 ###
-input_line = gets.split()
-n = input_line[0].to_i
-m = input_line[1].to_i
-k_n = []
-tow = []
-n.times do
-  input = gets.to_i
-  k_n << input
+# input_line = gets.split()
+# n = input_line[0].to_i
+# m = input_line[1].to_i
+# k_n = []
+# tow = []
+# n.times do
+#   input = gets.to_i
+#   k_n << input
+# end
+# while m > 0 do
+#   tow << m % 2
+#   m = m.div(2)
+# end
+# k_n.each do |i|
+#   puts tow[i - 1]
+# end
+
+
+
+###
+# 簡易ポーカー
+input = gets.to_i
+nums = []
+input.times do
+  n = gets.split()
+  nums << n
 end
-while m > 0 do
-  tow << m % 2
-  m = m.div(2)
-end
-k_n.each do |i|
-  puts tow[i - 1]
+
+nums.each do |i|
+  i.each do |e|
+    e = e.to_s.split("")
+    ee = e.group_by(&:itself).map{|key,value|[key,value.count]}.to_h
+    num = ee.values.count(2)
+    res = ee.values.max
+    if num == 2
+      puts "Two Pair"
+    elsif num == 1
+      puts "One Pair"
+    elsif res == 4
+      puts "Four Card"
+    elsif res == 3
+      puts "Three Card"
+    else
+      puts "No Pair"
+    end
+  end
 end
