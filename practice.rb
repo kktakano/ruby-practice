@@ -380,24 +380,37 @@
 
 
 ###
-n = gets.to_i
-ary = []
-judg = 0
-n.times do
-  input_line = gets.split()
-  ary << input_line
-end
-ary.each do |i|
-  t_i = i[0]
-  e = i[1].to_i
-  m = i[2].to_i
-  s = i[3].to_i
-  j = i[4].to_i
-  g = i[5].to_i
-  if t_i == "s"
-    judg += 1  if  m + s >= 160 && e+m+s+j+g >= 350
-  else
-    judg += 1  if  j + g >= 160 && e+m+s+j+g >= 350
-  end
-end
-puts judg
+# # 受験結果
+# n = gets.to_i
+# ary = []
+# judg = 0
+# n.times do
+#   input_line = gets.split()
+#   ary << input_line
+# end
+# ary.each do |i|
+#   t_i = i[0]
+#   e = i[1].to_i
+#   m = i[2].to_i
+#   s = i[3].to_i
+#   j = i[4].to_i
+#   g = i[5].to_i
+#   if t_i == "s"
+#     judg += 1  if  m + s >= 160 && e+m+s+j+g >= 350
+#   else
+#     judg += 1  if  j + g >= 160 && e+m+s+j+g >= 350
+#   end
+# end
+# puts judg
+
+
+###
+input = gets.split()
+a = input[0].split("").reverse
+b = input[1].split("").reverse
+
+fi = (a[0].to_i + b[0].to_i).digits[0] if a.include?(a[0]) || b.include?(b[0])
+se = (a[1].to_i + b[1].to_i).digits[0] if a.include?(a[1]) || b.include?(b[1])
+th = (a[2].to_i + b[2].to_i).digits[0] if a.include?(a[2]) || b.include?(b[2])
+
+puts "#{th}"+"#{se}"+"#{fi}"
