@@ -191,12 +191,72 @@
 # カードの 4 枚の並べ方は 4! = 24 通り存在しますが、足し算は順序に依存しないため、12 通りのみ考慮すればよいことに注意してください。
 # たとえば、9, 2, 3, 8 の順で並べた場合のスコアは 92 + 38 = 130 となります。
 
-input_line = gets.split()
-r1 = input_line.max(2)
-r2 = input_line.min(2)
-total1 = [r1[0] + r2[0]].join.to_i
-total2 = [r1[1] + r2[1]].join.to_i
-puts total1 + total2
+# input_line = gets.split()
+# r1 = input_line.max(2)
+# r2 = input_line.min(2)
+# total1 = [r1[0] + r2[0]].join.to_i
+# total2 = [r1[1] + r2[1]].join.to_i
+# puts total1 + total2
 
 
 
+
+###
+# input_line = gets.chomp
+
+# input_line.gsub!(/A/, '4')
+# input_line.gsub!(/E/, '3')
+# input_line.gsub!(/G/, '6')
+# input_line.gsub!(/I/, '1')
+# input_line.gsub!(/O/, '0')
+# input_line.gsub!(/S/, '5')
+# input_line.gsub!(/Z/, '2')
+
+# puts input_line
+
+
+
+# ###
+# input_line = gets.split()
+# student = input_line[0].to_i
+# pscore = input_line[1].to_i
+# score = []
+# absence = []
+# ok = []
+# student.times do |i|
+#   input = gets.split()
+#   score << input[0]
+#   absence << input[1]
+# end
+# absence.each_with_index do |e, i|
+#   result = score[i].to_i - e.to_i * 5
+#   if result >= pscore || pscore == 0
+#     ok << i + 1
+#   end
+# end
+
+# puts ok
+
+
+###
+q = gets.to_i
+n = []
+q.times do
+  n << gets.to_i
+end
+n.each do |i|
+  sum = 0
+  i.times do |e|
+    if i % (e + 1) == 0
+      sum += (e + 1)
+    end
+  end
+  sum = sum - i
+  if i == sum
+    puts "perfect"
+  elsif i - sum == 1
+    puts "nearly"
+  else
+    puts "neither"
+  end
+end
