@@ -364,15 +364,40 @@
 
 
 ###
+# n = gets.to_i
+# f_n = []
+# n.times do
+#   input_line = gets.to_i
+#   f_n << input_line
+# end
+# result = (1 - f_n[0]).abs
+# f_n.each_with_index do |i, index|
+#   result += (i.to_i - f_n[index+1].to_i).abs
+#   break if index == n-2
+# end
+# puts result
+
+
+
+###
 n = gets.to_i
-f_n = []
+ary = []
+judg = 0
 n.times do
-  input_line = gets.to_i
-  f_n << input_line
+  input_line = gets.split()
+  ary << input_line
 end
-result = (1 - f_n[0]).abs
-f_n.each_with_index do |i, index|
-  result += (i.to_i - f_n[index+1].to_i).abs
-  break if index == n-2
+ary.each do |i|
+  t_i = i[0]
+  e = i[1].to_i
+  m = i[2].to_i
+  s = i[3].to_i
+  j = i[4].to_i
+  g = i[5].to_i
+  if t_i == "s"
+    judg += 1  if  m + s >= 160 && e+m+s+j+g >= 350
+  else
+    judg += 1  if  j + g >= 160 && e+m+s+j+g >= 350
+  end
 end
-puts result
+puts judg
