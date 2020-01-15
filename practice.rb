@@ -435,26 +435,52 @@
 # end
 
 
-###
-input = gets.split()
-m = input[0].to_i
-n = input[1].to_i
-c_m = []
-a = []
-m.times do
-  input1 = gets.to_i
-  c_m << input1
-end
+###お食事
+# input = gets.split()
+# m = input[0].to_i
+# n = input[1].to_i
+# c_m = []
+# a = []
+# m.times do
+#   input1 = gets.to_i
+#   c_m << input1
+# end
+# n.times do
+#   input2 = gets.split()
+#   a << input2
+# end
+# result = []
+# a.each do |x|
+#   sum = 0
+#   x.each_with_index do |e, i|
+#     sum += (e.to_i * c_m[i] / 100).floor
+#   end
+#   result << sum
+# end
+# puts result
+
+
+###ハイアンドロー・カードゲーム
+index = gets.split()
+a = index[0].to_i
+b = index[1].to_i
+n = gets.to_i
+cards = []
 n.times do
-  input2 = gets.split()
-  a << input2
+  num = gets.chomp()
+  cards << num
 end
-result = []
-a.each do |x|
-  sum = 0
-  x.each_with_index do |e, i|
-    sum += (e.to_i * c_m[i] / 100).floor
+cards.each do |i|
+  i = i.split(" ")
+  if a > i[0].to_i
+    puts "High"
+  elsif a == i[0].to_i
+    if i[1].to_i > b
+      puts "High"
+    else
+      puts "Low"
+    end
+  else
+    puts "Low"
   end
-  result << sum
 end
-puts result
