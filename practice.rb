@@ -405,12 +405,31 @@
 
 
 ###
+# input = gets.split()
+# a = input[0].split("").reverse
+# b = input[1].split("").reverse
+
+# fi = (a[0].to_i + b[0].to_i).digits[0] if a.include?(a[0]) || b.include?(b[0])
+# se = (a[1].to_i + b[1].to_i).digits[0] if a.include?(a[1]) || b.include?(b[1])
+# th = (a[2].to_i + b[2].to_i).digits[0] if a.include?(a[2]) || b.include?(b[2])
+
+# puts "#{th}"+"#{se}"+"#{fi}"
+
+
+###
 input = gets.split()
-a = input[0].split("").reverse
-b = input[1].split("").reverse
+n = input[0].to_i
+t = input[1].split("")
+s_1 = input[2].split("")
+num = 0
 
-fi = (a[0].to_i + b[0].to_i).digits[0] if a.include?(a[0]) || b.include?(b[0])
-se = (a[1].to_i + b[1].to_i).digits[0] if a.include?(a[1]) || b.include?(b[1])
-th = (a[2].to_i + b[2].to_i).digits[0] if a.include?(a[2]) || b.include?(b[2])
-
-puts "#{th}"+"#{se}"+"#{fi}"
+if s_1 == t
+  puts num
+else
+  n.times do
+    s_1 = s_1.rotate
+    num += 1
+    break if s_1 == t
+  end
+  puts num
+end
