@@ -461,26 +461,39 @@
 
 
 ###ハイアンドロー・カードゲーム
-index = gets.split()
-a = index[0].to_i
-b = index[1].to_i
-n = gets.to_i
-cards = []
-n.times do
-  num = gets.chomp()
-  cards << num
+# index = gets.split()
+# a = index[0].to_i
+# b = index[1].to_i
+# n = gets.to_i
+# cards = []
+# n.times do
+#   num = gets.chomp()
+#   cards << num
+# end
+# cards.each do |i|
+#   i = i.split(" ")
+#   if a > i[0].to_i
+#     puts "High"
+#   elsif a == i[0].to_i
+#     if i[1].to_i > b
+#       puts "High"
+#     else
+#       puts "Low"
+#     end
+#   else
+#     puts "Low"
+#   end
+# end
+
+
+###
+input = gets.split()
+price = input[0].to_f
+p1 = input[1].to_f
+sum = price
+while price > 0 do
+  discount = price * p1 / 100
+  price = (price - discount).floor
+  sum += price
 end
-cards.each do |i|
-  i = i.split(" ")
-  if a > i[0].to_i
-    puts "High"
-  elsif a == i[0].to_i
-    if i[1].to_i > b
-      puts "High"
-    else
-      puts "Low"
-    end
-  else
-    puts "Low"
-  end
-end
+puts sum.to_i
