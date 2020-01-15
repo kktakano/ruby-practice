@@ -417,19 +417,44 @@
 
 
 ###
-input = gets.split()
-n = input[0].to_i
-t = input[1].split("")
-s_1 = input[2].split("")
-num = 0
+# input = gets.split()
+# n = input[0].to_i
+# t = input[1].split("")
+# s_1 = input[2].split("")
+# num = 0
 
-if s_1 == t
-  puts num
-else
-  n.times do
-    s_1 = s_1.rotate
-    num += 1
-    break if s_1 == t
-  end
-  puts num
+# if s_1 == t
+#   puts num
+# else
+#   n.times do
+#     s_1 = s_1.rotate
+#     num += 1
+#     break if s_1 == t
+#   end
+#   puts num
+# end
+
+
+###
+input = gets.split()
+m = input[0].to_i
+n = input[1].to_i
+c_m = []
+a = []
+m.times do
+  input1 = gets.to_i
+  c_m << input1
 end
+n.times do
+  input2 = gets.split()
+  a << input2
+end
+result = []
+a.each do |x|
+  sum = 0
+  x.each_with_index do |e, i|
+    sum += (e.to_i * c_m[i] / 100).floor
+  end
+  result << sum
+end
+puts result
