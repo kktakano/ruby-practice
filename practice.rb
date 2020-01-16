@@ -501,28 +501,47 @@
 
 
 ###単語テストの採点
-n = gets.to_i
-ary = []
-result = 0
-n.times do
-  input = gets.split()
-  ary << input
-end
+# n = gets.to_i
+# ary = []
+# result = 0
+# n.times do
+#   input = gets.split()
+#   ary << input
+# end
 
-ary.each do |e|
-  
-  re = 0
-  e[0].split("").zip(e[1].split("")) do |i,k|
-    re += 1 if i != k
-  end
-  if e[0].length != e[1].length
-    result += 0
-  elsif re == 1
-    result += 1
-  elsif e[0] == e[1]
-    result += 2
-  else
-    result += 0
-  end
+# ary.each do |e|
+
+#   re = 0
+#   e[0].split("").zip(e[1].split("")) do |i,k|
+#     re += 1 if i != k
+#   end
+#   if e[0].length != e[1].length
+#     result += 0
+#   elsif re == 1
+#     result += 1
+#   elsif e[0] == e[1]
+#     result += 2
+#   else
+#     result += 0
+#   end
+# end
+# puts result
+
+
+
+
+###
+input = gets.split()
+day = input[0].split("/")
+time = input[1].split(":")
+result = []
+if time[0].to_i > 23
+  result = time[0].to_i.divmod(24)
+  day[1] = (result[0] + day[1].to_i).to_s
+  day =day.join("/")
+  time[0] = sprintf("%0.2d", (result[1] + 0)).to_s
+  time =time.join(":")
+  puts day + " " + time
+else
+  puts input.join(" ")
 end
-puts result
