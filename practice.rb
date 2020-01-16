@@ -487,13 +487,42 @@
 
 
 ###
-input = gets.split()
-price = input[0].to_f
-p1 = input[1].to_f
-sum = price
-while price > 0 do
-  discount = price * p1 / 100
-  price = (price - discount).floor
-  sum += price
+# input = gets.split()
+# price = input[0].to_f
+# p1 = input[1].to_f
+# sum = price
+# while price > 0 do
+#   discount = price * p1 / 100
+#   price = (price - discount).floor
+#   sum += price
+# end
+# puts sum.to_i
+
+
+
+###単語テストの採点
+n = gets.to_i
+ary = []
+result = 0
+n.times do
+  input = gets.split()
+  ary << input
 end
-puts sum.to_i
+
+ary.each do |e|
+  
+  re = 0
+  e[0].split("").zip(e[1].split("")) do |i,k|
+    re += 1 if i != k
+  end
+  if e[0].length != e[1].length
+    result += 0
+  elsif re == 1
+    result += 1
+  elsif e[0] == e[1]
+    result += 2
+  else
+    result += 0
+  end
+end
+puts result
