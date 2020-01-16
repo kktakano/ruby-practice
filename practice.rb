@@ -531,17 +531,21 @@
 
 
 ###
-input = gets.split()
-day = input[0].split("/")
-time = input[1].split(":")
-result = []
-if time[0].to_i > 23
-  result = time[0].to_i.divmod(24)
-  day[1] = (result[0] + day[1].to_i).to_s
-  day =day.join("/")
-  time[0] = sprintf("%0.2d", (result[1] + 0)).to_s
-  time =time.join(":")
-  puts day + " " + time
-else
-  puts input.join(" ")
-end
+# input = gets.split()
+# day = input[0].split("/")
+# time = input[1].split(":")
+# result = []
+# if time[0].to_i > 23
+#   result = time[0].to_i.divmod(24)
+#   day[1] = (result[0] + day[1].to_i).to_s
+#   day =day.join("/")
+#   time[0] = sprintf("%0.2d", (result[1] + 0)).to_s
+#   time =time.join(":")
+#   puts day + " " + time
+# else
+#   puts input.join(" ")
+# end
+
+
+
+###
